@@ -23,6 +23,12 @@ console.log(fullName); //.warn .error ...
 // }, 10000); // thong bao sau 1 khoang thoi gian "10000ms" sau khi load trang
 
 // set interval
-setInterval(function () {
-  console.log("1 so ngau nhien " + Math.random());
-}, 3000); // thong bao sau 1 khoang thoi gian "1000ms" theo chu ky khi load trang
+// setInterval(function () {
+//   console.log("1 so ngau nhien " + Math.random());
+// }, 3000); // thong bao sau 1 khoang thoi gian "1000ms" theo chu ky khi load trang
+
+var getRandomItem = function (arr) {
+  var length = Math.floor(Math.random() * arr.length);
+  return console.log(arr[length]);
+};
+var myArray = ["thien", "nga", "hieu"];
