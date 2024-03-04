@@ -23,7 +23,7 @@
  * innerHTML, outerHTML
  *
  */
-var courses = ["HTML & CSS", "Javascript", "PHP", "Java"];
+// var courses = ["HTML & CSS", "Javascript", "PHP", "Java"];
 
 // function render(courses) {
 //   var ulElement = document.querySelector("ul");
@@ -33,10 +33,11 @@ var courses = ["HTML & CSS", "Javascript", "PHP", "Java"];
 //   return ulElement;
 // }
 // render(courses);
-function render(courses) {
-  var ulElement = document.querySelector("ul");
-  for (var i in courses) {
-    ulElement.innerHTML += `<li>${courses[i]}</li>`;
-  }
-}
-render(courses);
+
+// function render(courses) {
+//   var ulElement = document.querySelector("ul");
+//   for (var i in courses) {
+//     ulElement.innerHTML += `<li>${courses[i]}</li>`;
+//   }
+// }
+// render(courses);
