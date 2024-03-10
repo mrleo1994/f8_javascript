@@ -7,5 +7,14 @@
  * Giải mã: JSON.parse()
  */
 
-var a = "1";
-console.log(JSON.parse(a));
+// var a = "1";
+// console.log(JSON.parse(a));
+
+/**
+ * Promise
+ *  - Sync // chạy 1 chiều từ trên xuống
+ *  - Async : setTimeout, setInterval, fetch, XMLHttpRequest, file reading, geolocation, ... // Callback
+ *  - Pending
+ *  - Fulfilled
+ *  - Rejected-
+ */
