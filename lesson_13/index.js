@@ -17,4 +17,16 @@
  *  - Pending
  *  - Fulfilled
  *  - Rejected-
+ * 1. new Promise
+ * 2. Executor
+ * 3. resolve, reject
+ * 4. then, catch, finally
+ *
+ * Chain
+ *
+ * 1.Promise.resolve
+ * 2.Promise.reject
+ * 3.Promise.all
+ *
+ * Thư viện: output luôn luôn là một promise
  */
