@@ -1,0 +1,14 @@
+{
+  "courses": [
+    {
+      "id": 1,
+      "name": "kiến thức cho người mới bắt đầu",
+      "author": "Son Dang"
+    },
+    {
+      "name": "Xây dựng web với node js",
+      "author": "Thien Pham",
+      "id": 2
+    }
+  ]
+}

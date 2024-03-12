@@ -30,3 +30,25 @@
  *
  * Thư viện: output luôn luôn là một promise
  */
+
+var courseApi = "http://localhost:3000/courses";
+
+// stream
+fetch(courseApi)
+  .then(function (response) {
+    return response.json();
+    // JSON.parse: JSON -> Javascript types
+  })
+  .then(function (courses) {
+    var htmls = courses.map(function (course) {
+      return `<li>
+      <h2>${course.name}</h2>
+      <p>${course.author}</p>
+      </li>`;
+    });
+    var html = htmls.join("");
+    document.getElementById("course-block").innerHTML = html;
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
