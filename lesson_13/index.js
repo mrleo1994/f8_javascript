@@ -31,24 +31,83 @@
  * Thư viện: output luôn luôn là một promise
  */
 
-var courseApi = "http://localhost:3000/courses";
+// var courseApi = "http://localhost:3000/courses";
 
 // stream
-fetch(courseApi)
-  .then(function (response) {
-    return response.json();
-    // JSON.parse: JSON -> Javascript types
-  })
-  .then(function (courses) {
-    var htmls = courses.map(function (course) {
-      return `<li>
-      <h2>${course.name}</h2>
-      <p>${course.author}</p>
-      </li>`;
+// fetch(courseApi)
+//   .then(function (response) {
+//     return response.json();
+//     // JSON.parse: JSON -> Javascript types
+//   })
+//   .then(function (courses) {
+//     var htmls = courses.map(function (course) {
+//       return `<li>
+//       <h2>${course.name}</h2>
+//       <p>${course.author}</p>
+//       </li>`;
+//     });
+//     var html = htmls.join("");
+//     document.getElementById("course-block").innerHTML = html;
+//   })
+//   .catch(function (error) {
+//     console.log(error);
+//   });
+var courseApi = "http://localhost:3000/courses";
+function start() {
+  getCourses(renderCourses);
+  handleAddCourse();
+}
+
+start();
+
+// Functions
+function getCourses(callback) {
+  fetch(courseApi)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(callback)
+    .catch(function (error) {
+      console.log(error);
     });
-    var html = htmls.join("");
-    document.getElementById("course-block").innerHTML = html;
-  })
-  .catch(function (error) {
-    console.log(error);
+}
+
+function renderCourses(courses) {
+  var listCourses = document.getElementById("list-courses");
+  var htmls = courses.map(function (course) {
+    return `<li>
+    <h4>${course.name}</h4>
+    <p>${course.author}</p>
+    </li>`;
   });
+  listCourses.innerHTML = htmls.join("");
+}
+
+function handleAddCourse() {
+  var addBtn = document.getElementById("btn-add-course");
+  addBtn.onclick = function () {
+    var name = document.getElementById("name").value;
+    var author = document.getElementById("author").value;
+    var formData = {
+      name: name,
+      author: author,
+    };
+    var options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    };
+    fetch(courseApi, options)
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (course) {
+        console.log(course);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
+}
