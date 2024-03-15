@@ -4,7 +4,7 @@
  * 3. Multi-line String
  * 4. Arrow Function
  * 5. Classes
- * 6. Default Parameter
+ * 6. Default Parameter values
  * 7. Destructuring
  * 8. Rest Parameter
  * 9. Spread Operator
