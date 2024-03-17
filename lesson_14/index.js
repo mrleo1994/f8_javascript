@@ -15,3 +15,15 @@
 
 // 1. Var/ Let, Const: Scope, Hosting
 // 2. Const/ Var, Let: Assignment
+function highlight([fist, ...rest], ...values) {
+  return values.reduce((acc, cur) => {
+    return `${acc} <span class="highlight">${cur}</span>${rest.shift()}`;
+  }, fist);
+}
+
+const name = "Sanyat";
+const age = 25;
+
+const html = highlight`Hello ${name}, i'm ${age} years old`;
+console.log(html);
+document.body.innerHTML = html;
